@@ -2,12 +2,23 @@ import React from "react";
 import Link from "next/link";
 
 const NavBar = () => {
+  const links = [
+    { href: "/", label: "Dashboard" },
+    { href: "/issues", label: "Issues" },
+    { href: "/patch", label: "Patch Notes" },
+  ];
   return (
     <nav>
-      <ul className="space-x-6 border-b mb-5 p-2 px-5">
-        <Link href="/">Dashboard</Link>
-        <Link href="/issues">Issues</Link>
-        <Link href="/about">About</Link>
+      <ul className="flex space-x-6 border-b mb-5 p-2 px-5">
+        {links.map((link) => (
+          <Link
+            key={link.href}
+            className="hover:text-zinc-700 transition-colors"
+            href={link.href}
+          >
+            {link.label}
+          </Link>
+        ))}
       </ul>
     </nav>
   );
