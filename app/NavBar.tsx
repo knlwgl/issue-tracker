@@ -8,7 +8,7 @@ const NavBar = () => {
     { href: "/patch", label: "Patch Notes" },
   ];
   return (
-    <nav>
+    <nav className="bg-amber-100">
       <ul className="flex space-x-6 border-b mb-5 p-2 px-5">
         {links.map((link) => (
           <Link
